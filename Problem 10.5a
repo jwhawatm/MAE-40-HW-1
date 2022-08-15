@@ -1,0 +1,14 @@
+%Problem 10.5a
+
+clear all;
+clc;
+
+R = 1000;
+C = 0.0005;
+L = 2000;
+
+s = tf('s');
+num = [-L*C , R*C];
+den = [R*L , 0];
+G = tf(num,den)
+bode(G)
