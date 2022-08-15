@@ -1,0 +1,63 @@
+
+
+%Example 9.12 
+%Each line starting with tf was to check if each tf was correct
+
+%% Part A
+
+clear all;
+clc;
+
+
+figure(1)
+tf([1],[1 1])
+bode(tf([1],[1 1]))
+%% Part B
+
+clc; 
+clear all;
+
+figure(2)
+tf([1 -1],[1])
+bode(tf([1 -1],[1]))
+
+%%  Part C
+
+clc; 
+clear all;
+
+figure(3)
+tf([1 -1],[1 1])
+bode(tf([1 -1],[1 1]))
+
+%%  Part D
+
+clc; 
+clear all;
+
+
+figure(4)
+tf([1 101 100],[1 0])
+bode(tf([1 101 100],[1 0]))
+
+%%  Part E
+
+clc; 
+clear all;
+
+
+figure(5)
+tf([1 0],[1 101 100])
+bode(tf([1 0],[1 101 100]))
+
+%%  Part F
+
+clc; 
+clear all;
+
+
+figure(6)
+tf([1],[1 1 1])
+bode(tf([1],[1 1 1]))
+
+
