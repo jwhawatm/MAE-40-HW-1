@@ -1,0 +1,31 @@
+%% CAPACITORS
+clc;
+clear all;
+
+syms C1 C2 C3 C4 C5 Ca Cb Cc
+
+eq1='1/(1/Ca+1/Cb)==C1+1/(1/C2+1/C3)'
+eq2='1/(1/Ca+1/Cc)==C2+1/(1/C1+1/C3)'
+eq3='1/(1/Cb+1/Cc)==C3+1/(1/C1+1/C2)'
+
+A=solve(str2sym(eq1),str2sym(eq2),str2sym(eq3),Ca,Cb,Cc);
+B=solve(str2sym(eq1),str2sym(eq2),str2sym(eq3),C1,C2,C3);
+
+Ca=simplify(A.Ca),Cb=simplify(A.Cb),Cc=simplify(A.Cc)
+simplify(1/(1/Ca) + 1/(1/Cb+1/C4) + 1/(1/Cc+1/C5))
+C1=simplify(B.C1),C2=simplify(B.C2),C3=simplify(B.C3)
+
+%% RESISTORS
+
+syms R1 R2 R3 R4 R5 Ra Rb Rc
+
+eq1='Ra+Rb==1/(1/R1+1/(R2+R3))'
+eq2='Ra+Rc==1/(1/R2+1/(R1+R3))'
+eq3='Rb+Rc==1/(1/R3+1/(R1+R2))'
+
+A=solve(str2sym(eq1),str2sym(eq2),str2sym(eq3),Ra,Rb,Rc);
+B=solve(str2sym(eq1),str2sym(eq2),str2sym(eq3),R1,R2,R3);
+
+Ra=simplify(A.Ra),Rb=simplify(A.Rb),Rc=simplify(A.Rc)
+simplify(Ra + 1/(1/(Rb+R4) + 1/(Rc+R5)))
+R1=simplify(B.R1),R2=simplify(B.R2),R3=simplify(B.R3)
