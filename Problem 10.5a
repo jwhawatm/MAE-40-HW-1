@@ -1,6 +1,5 @@
+%% Problem 10.5a
 
-%%With values simplified
-%Problem 10.5a
 
 clear all;
 clc;
@@ -10,24 +9,8 @@ C = 0.0005;
 L = 2000;
 
 s = tf('s');
-num = [-1 , 0.5];
-den = [R*L , 0];
+
+num = [C 0]
+den = [(C^2)*L R*(C^2)+C 0]
 G = tf(num,den)
 bode(G)
-
-%%With variables instead of the value inputed
-%Problem 10.5a
-
-%clear all;
-
-%clc;
-
-%R = 1000;
-%C = 0.0005;
-%L = 2000;
-
-%s = tf('s');
-%num = [-L*C , R*C];
-%den = [R*L , 0];
-%G = tf(num,den)
-%bode(G)
